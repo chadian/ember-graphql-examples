@@ -1,0 +1,20 @@
+{{#each model as |post|}}
+  <div class="post">
+    <div class="content">
+      {{{post.post}}}
+    </div>
+    <div class="meta">
+      <img class="user-image" src={{post.User.image}} alt={{post.User.name}}>
+      <div class="user-name">{{post.User.name}}</div>
+      <div class="date">
+      {{#if post.source}}
+        <a href={{post.source}}>
+        on {{post.date}}
+        </a>
+      {{else}}
+        on {{post.date}}
+      {{/if}}
+      </div>
+    </div>
+  </div>
+{{/each}}

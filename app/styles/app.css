@@ -1,0 +1,85 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: rgba(136, 90, 90, 1);
+}
+
+a:hover {
+  color: rgba(140, 53, 65, 1);
+}
+
+.app-login {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+}
+
+.app-login code {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.app-login .login-button {
+  display: block;
+  font-size: 3rem;
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clients {
+  display: flex;
+  justify-content: space-between;
+}
+
+.client {
+  background-color: rgba(255, 191, 0, 1);
+  padding: 1rem;
+  width: 24%;
+}
+
+.post {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.post + .post {
+  margin-top: 2rem;
+}
+
+.post .content {
+  font-style: italic;
+  padding: 1rem;
+  word-break: break-word;
+}
+
+.post .user-image {
+  width: 6rem;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.post .date {
+  display: inline-block;
+}
+
+.post .meta {
+  margin-top: 1rem;
+  clear: both;
+  text-align: center;
+}
+
+.post img {
+  display: block;
+  max-width: 100%;
+  margin: 1rem 0;
+}

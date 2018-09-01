@@ -1,5 +1,7 @@
 'use strict';
 
+const GRAPHQL_API_PATH = "/api/graph";
+
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'ember-graphql-examples',
@@ -20,6 +22,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    GRAPHQL_API_PATH,
+
+    apollo: {
+      apiURL: GRAPHQL_API_PATH,
     }
   };
 
@@ -29,6 +37,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    };
   }
 
   if (environment === 'test') {

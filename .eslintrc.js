@@ -1,11 +1,15 @@
 module.exports = {
+  globals: {
+    server: true,
+  },
   root: true,
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module'
   },
   plugins: [
-    'ember'
+    'ember',
+    'graphql'
   ],
   extends: [
     'eslint:recommended',
@@ -15,6 +19,14 @@ module.exports = {
     browser: true
   },
   rules: {
+    "graphql/template-strings": ['error', {
+      env: 'literal',
+      projectName: 'ember-graphql-examples'
+    }, {
+      env: 'literal',
+      tagName: 'gql',
+      projectName: 'ember-graphql-examples'
+    }]
   },
   overrides: [
     // node files

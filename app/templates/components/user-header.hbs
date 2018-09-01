@@ -1,0 +1,10 @@
+<h1><code>{{method}}</code></h1>
+<h2>{{user.login}}</h2>
+<h3>{{user.name}}</h3>
+<img width="150" src="{{user.avatarUrl}}" alt="Profile photo" />
+<h3>Pinned Repos</h3>
+
+{{#each user.pinnedRepositories.nodes as |repo|}}
+  <h4>{{repo.name}}</h4>
+  <div>{{repo.description}}</div>
+{{/each}}

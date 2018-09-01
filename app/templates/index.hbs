@@ -1,0 +1,18 @@
+<h1>ember-graphql-examples</h1>
+<div class="clients">
+  {{#clients/ember-apollo-client as |model|}}
+    {{posts-feed model=model}}
+  {{/clients/ember-apollo-client}}
+
+  {{#clients/lokka-client as |model|}}
+    {{posts-feed model=model}}
+  {{/clients/lokka-client}}
+
+  {{#clients/graphql-adapter as |model|}}
+    {{posts-feed model=model}}
+  {{/clients/graphql-adapter}}
+
+  {{#clients/graphql-request as |model|}}
+    {{posts-feed model=model}}
+  {{/clients/graphql-request}}
+</div>

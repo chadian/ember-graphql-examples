@@ -1,1 +1,4 @@
 /blueprints/*/files/**/*.js
+
+# ignore schema from being linted as a query by `eslint-plugin-graphql`
+app/gql/schema.graphql

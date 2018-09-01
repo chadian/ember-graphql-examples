@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "ember-graphql-examples": {
+      "schemaPath": "app/gql/schema.graphql",
+      "extensions": {
+        "endpoints": {
+          "dev": "http://localhost:4200/api/graph"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+# source: http://localhost:4200/api/graph
+# timestamp: Sat Sep 29 2018 22:17:48 GMT+0200 (CEST)
+
+type ListMetadata {
+  count: Int
+}
+
+type Mutation {
+  createUser(
+    tags: [String]!
+    image: String!
+    url: String
+    name: String!
+    created: String!
+    id: ID!
+  ): User
+  updateUser(
+    tags: [String]
+    image: String
+    url: String
+    name: String
+    created: String
+    id: ID!
+  ): User
+  removeUser(id: ID!): Boolean
+  createPost(
+    post: String!
+    date: String!
+    source: String!
+    user_id: ID!
+    id: ID!
+  ): Post
+  updatePost(
+    post: String
+    date: String
+    source: String
+    user_id: ID
+    id: ID!
+  ): Post
+  removePost(id: ID!): Boolean
+}
+
+type Post {
+  post: String!
+  date: String!
+  source: String!
+  user_id: ID!
+  id: ID!
+  User: User
+}
+
+input PostFilter {
+  q: String
+  ids: [ID]
+  post: String
+  date: String
+  source: String
+  user_id: ID
+  id: ID
+}
+
+type Query {
+  User(id: ID!): User
+  allUsers(
+    page: Int
+    perPage: Int
+    sortField: String
+    sortOrder: String
+    filter: UserFilter
+  ): [User]
+  _allUsersMeta(page: Int, perPage: Int, filter: UserFilter): ListMetadata
+  Post(id: ID!): Post
+  allPosts(
+    page: Int
+    perPage: Int
+    sortField: String
+    sortOrder: String
+    filter: PostFilter
+  ): [Post]
+  _allPostsMeta(page: Int, perPage: Int, filter: PostFilter): ListMetadata
+}
+
+type User {
+  tags: [String]!
+  image: String!
+  url: String
+  name: String!
+  created: String!
+  id: ID!
+  Posts: [Post]
+}
+
+input UserFilter {
+  q: String
+  ids: [ID]
+  tags: [String]
+  image: String
+  url: String
+  name: String
+  created: String
+  id: ID
+}
